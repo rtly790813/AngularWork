@@ -17,10 +17,11 @@ export class AppComponent {
       this.title  = 'The Will Will Web';
     }
   }
-  count($event) {
-    if ($event.keyCode === 27) {
-      $event.target.value = '';
-    }
-    this.wordCount = $event.target.value.length;
+  keywordChanges(keyWord: string) {
+    this.wordCount = keyWord.length;
+  }
+  resetInput(input: HTMLInputElement) {
+    input.value = '';
+    this.wordCount = 0;
   }
 }
